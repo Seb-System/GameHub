@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0aa134c748f7bb4398f0b93f0f19bb9",
+    "content-hash": "a771a5c8cab101bcddcbfd6b306cf4c6",
     "packages": [
         {
             "name": "doctrine/annotations",
@@ -1760,6 +1760,52 @@
             "time": "2020-04-13T14:42:16+00:00"
         },
         {
+            "name": "payplug/payplug-php",
+            "version": "3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/payplug/payplug-php.git",
+                "reference": "ddb46cd2f4852cce1f13324046f61fdaeea995b0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/payplug/payplug-php/zipball/ddb46cd2f4852cce1f13324046f61fdaeea995b0",
+                "reference": "ddb46cd2f4852cce1f13324046f61fdaeea995b0",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-openssl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpdocumentor/phpdocumentor": "2.*",
+                "phpunit/phpunit": "4.6.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Payplug\\": "lib/"
+                },
+                "psr-4": {
+                    "Payplug\\": "lib/Payplug"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PayPlug",
+                    "email": "support@payplug.com"
+                }
+            ],
+            "description": "A simple PHP library for PayPlug public API.",
+            "homepage": "https://www.payplug.com",
+            "time": "2015-05-06T00:00:00+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.1.0",
             "source": {
@@ -1906,6 +1952,56 @@
             ],
             "description": "A PSR-5 based resolver of Class names, Types and Structural Element Names",
             "time": "2020-02-18T18:59:58+00:00"
+        },
+        {
+            "name": "predis/predis",
+            "version": "v1.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nrk/predis.git",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nrk/predis/zipball/f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "reference": "f0210e38881631afeafb56ab43405a92cafd9fd1",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.9"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "suggest": {
+                "ext-curl": "Allows access to Webdis when paired with phpiredis",
+                "ext-phpiredis": "Allows faster serialization and deserialization of the Redis protocol"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Predis\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Daniele Alessandri",
+                    "email": "suppakilla@gmail.com",
+                    "homepage": "http://clorophilla.net"
+                }
+            ],
+            "description": "Flexible and feature-complete Redis client for PHP and HHVM",
+            "homepage": "http://github.com/nrk/predis",
+            "keywords": [
+                "nosql",
+                "predis",
+                "redis"
+            ],
+            "time": "2016-06-16T16:22:20+00:00"
         },
         {
             "name": "psr/cache",

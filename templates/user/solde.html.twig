@@ -1,0 +1,18 @@
+{% block stylesheets %}
+    <link rel="stylesheet" href="..\assets\css\solde.css">
+    <title>Solde</title>
+{% endblock %}
+
+{% block body %}
+    <main>
+        <main>
+            <a href="{{ path('profil') }}">
+            <div class="logo">
+                <span class="text">Solde</span>
+                <span class="color">Hub</span>
+                <span class="solde">{{ balance }} €</span>
+            </div>
+            </a>
+        </main>
+    </main>
+{% endblock %}

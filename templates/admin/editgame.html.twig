@@ -1,0 +1,72 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../../assets/css/modifjeux.css">
+{% endblock %}
+
+{% block body %}
+<div class="sidebar">
+            <ul class="sidebar__menu">
+                <li class="sidebar__content">
+                   <a href="{{ path('add_game') }}" class="link">Ajouter Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_game') }}" class="link">Liste Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_user') }}" class="link">Liste Membre</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('admin') }}" class="link">DashBoard</a>
+                </li>
+                <div class="border"></div>
+            </ul>
+        </div>
+    <div class="container">
+        <div class="form__content">
+            <h1 class="title big">Modifier le Jeu</h1>
+            <div class="navbar__profil">
+                <ul>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('profil') }}" >Mon profil</a>
+                    </li>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('user_edit') }}" >Modifier Profil</a>
+                    </li>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('solde') }}" >Mon Solde</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="title orange">
+                            <a class="title" href="{{ path('list_game') }}">Modifier Jeu</a>
+                        </li>
+                        <li class="title orange">
+                            <a class="title" href="{{ path('add_game') }}">Ajouter Jeu</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+            {{ form_start(editgameForm) }}
+                <div class="border__form"></div>
+                <h1 class="title">Nom du jeu</h1>
+                 {{ form_row(editgameForm.game_name) }}
+                <div class="border__form"></div>
+                <h1 class="title">Prix</h1>
+                 {{ form_row(editgameForm.game_price) }}
+                <div class="border__form"></div>
+                <h1 class="title">Description</h1>
+                 {{ form_row(editgameForm.game_desc) }}
+                <div class="border__form"></div>
+                <h1 class="title">Image du Jeu</h1>
+                 {{ form_row(editgameForm.game_img) }}
+                <div class="border__form"></div>
+                <button type="submit" class="login_button input__style">Modifier</button>
+            {{ form_end(editgameForm) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Dashboard{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../../assets/css/admin.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
+
+{% block body %}
+        <div class="sidebar">
+            <ul class="sidebar__menu">
+                <li class="sidebar__content">
+                   <a href="{{ path('add_game') }}" class="link">Ajouter Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_game') }}" class="link">Liste Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_user') }}" class="link">Liste Membre</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('admin') }}" class="link">DashBoard</a>
+                </li>
+                <div class="border"></div>
+            </ul>
+        </div>
+        <div class="container">
+            <div class="dashboard">
+                <div class="dashboard__item">
+                    <p class="label">Ventes (Semaine)</p>
+                    <p class="label">80</p>
+                </div>
+                <div class="dashboard__item">
+                    <p class="label">Chiffre d'affaire (Semaine)</p>
+                    <p class="label">50</p>
+                </div>
+                <div class="dashboard__item">
+                    <p class="label">Nombre de membre</p>
+                      <p class="label">5</p>
+                </div>
+                <div class="dashboard__item">
+                    <p class="label">Nouveaux membres (Semaine)</p>
+                    <p class="label">50</p>
+                </div>
+            </div>
+        </div>
+ {% endblock %}

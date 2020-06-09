@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="assets\css\login.css">
+{% endblock %}
+
+{% block title %}Login{% endblock %}
+
+{% block body %}
+
+    <div class="img">
+    </div>
+    <div class="form__content">
+        <h1>Connexion membre</h1>
+        <p>Accédez à votre compte</p>
+        <form action="" method="POST">
+
+        <input type="mail" value="{{ last_username }}" name="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus>    
+                <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                <input class="login_button" type="submit" value="Se connecter">
+                <span><a href="{{ path("app_register") }}">Inscrivez-vous !</a></span>
+                <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+        </form>
+        <span><a href="">Nom d'utilisateur ou mot de passe oublié ?</a></span>
+    </div>
+{% endblock %}

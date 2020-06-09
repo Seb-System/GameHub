@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="..\assets\css\BetterCatalogue.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <section class="cards-wrapper">
+        {% for game in games %}
+            <div class="card-grid-space">
+                <a class="card" href="{{ path('game_view', {id: game.id })}}" style="--bg-img: url('{{ game.gameimg }}')">
+                    <div>
+                        <h1>{{ game.gamename }}</h1>
+                        <p>{{ game.gameprice }} €</p>
+                        <div class="tags">
+                            <div class="tag"><p>{{ game.gamecat.categoryname }}</p></div>
+                            <div class="tag"><p>{{ game.gamenote }}%</p></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </section>
+
+{% endblock %}

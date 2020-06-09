@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="../assets/css/modifprofil.css">
+{% endblock %}
+
+{% block title %}Edit Profil{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="form__content">
+            <h1 class="title big">Modifier Votre Profil</h1>
+            <div class="border__form"></div>
+            <div class="navbar__profil">
+                <ul>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('profil') }}" >Mon profil</a>
+                    </li>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('user_edit') }}" >Modifier Profil</a>
+                    </li>
+                    <li class="title orange">
+                        <a class="title" href="{{ path('solde') }}" >Mon Solde</a>
+                    </li>
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li class="title orange">
+                            <a class="title" href="{{ path('list_game') }}">Modifier Jeu</a>
+                        </li>
+                        <li class="title orange">
+                            <a class="title" href="{{ path('add_game') }}">Ajouter Jeu</a>
+                        </li>
+                    {% endif %}
+                </ul>
+            </div>
+                <div class="border__form"></div>
+                <h1 class="title">Informations Personnelles</h1>
+                <input type="text" id="lastname" placeholder="Lastname" name="user_lastname" value="{{ lastname }}" disabled>
+                <input type="text" id="firstname" placeholder="Firstname" name="user_firstname" value="{{ firstname }}" disabled>
+                <input type="text" id="pseudo" placeholder="Pseudo" name="user_pseudo" value="{{ username }}" disabled>
+                <div class="border__form"></div>
+                <h1 class="title">Adresse Mail</h1>
+                <input type="mail" id="mail" placeholder="E-Mail" name="user_mail" value="{{ email }}" disabled>
+                <div class="border__form"></div>
+                <h1 class="title">Mot de Passe</h1>
+               {{ form_start(changpassForm) }}
+                    {{ form_row(changpassForm.password) }}
+                    {{ form_row(changpassForm.confirm_password.first) }}
+                    {{ form_row(changpassForm.confirm_password.second) }}
+                    <div class="border__form"></div>
+                    <button type="submit" class="login_button">Modifier</button>
+                {{ form_end(changpassForm) }}
+        </div>
+    </div>
+{% endblock %}

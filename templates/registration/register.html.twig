@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+<link rel="stylesheet" href="../assets/css/register.css">
+{% endblock %}
+
+{% block title %}Register{% endblock %}
+
+{% block body %}
+    <div class="img">
+    </div>
+        <div class="form__content">
+            <h1>Pas Encore Inscrit ?!</h1>
+            <p>Ameliorer votre expérience</p>
+            <div class="border__form"></div>
+            {{ form_start(registrationForm) }}
+                 {{ form_row(registrationForm.firstname) }}
+                    {{ form_row(registrationForm.lastname) }}
+                    {{ form_row(registrationForm.email) }}
+                    {{ form_row(registrationForm.birthday) }}
+                    {{ form_row(registrationForm.plainPassword) }}
+                <div class="border__form"></div>
+                <button type="submit" class="login_button">S'inscrire</button>
+                <span><a href="">Déja Membre ?</a></span>
+             {{ form_end(registrationForm) }}
+            <span><a href="">Nom d'utilisateur ou mot de passe oublié ?</a></span>
+        </div>
+{% endblock %}

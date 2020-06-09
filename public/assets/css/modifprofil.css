@@ -1,0 +1,102 @@
+html {
+    background-color: #000;
+    height: 100%;
+    overflow: hidden;
+}
+body {
+    margin: 0;
+    height: 100%;
+}
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+.form__content {
+   padding: 20px;
+   width: 470px;
+   display: block;
+   text-align: center;
+   border-radius: 15px;
+   background: rgba(0, 0, 0, .9);
+   border: 1px solid #333;
+   height: auto;
+   transition: ease-in 0.5s;
+   box-sizing: unset;
+}
+label {
+    color: #363636;
+}
+input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 2px;
+    border: 1px solid #333;
+    font-size: 17px;
+    margin: 15px auto!important;
+    background: rgba(0, 0, 0, .9);
+    padding: 20px;
+    color: #fff;
+    height: 46px;
+}
+input:focus {
+    outline-color: #fff;
+}
+.border__form{
+    margin-top: 5px;
+    width: 100%;
+    background-color: #f90;
+    height: 1px;
+}
+.login_button {
+    background-color: #f90;
+    margin: 20px 20px 20px 0;
+    padding: 15px 20px;
+    width: 290px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+    border: 1px solid #f90;
+}
+.login_button:hover {
+    background: #ffa31a;
+}
+.login_button:focus {
+    outline: none;
+}
+.title {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+    text-align: center;
+    font-size: 14px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.big {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.orange {
+    border-left: 1px solid #f80;
+    border-right: 1px solid #f80;
+    padding: 0 5px 0 5px;
+}
+.orange a {
+    color: #f90;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.orange a:hover {
+    text-decoration: underline;
+    font-size: 18px;
+}
+.navbar__profil ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}

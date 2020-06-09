@@ -1,0 +1,78 @@
+.container {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+body {
+    height: auto;
+}
+.product {
+    width: 60%;
+    height: auto;
+    display: block;
+    border: 2px solid #292929;
+    border-radius: 15px;
+}
+
+.img {
+    border-radius: 15px;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("img/login.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 652px;
+    border-bottom: 4px solid #292929;
+}
+.product__content {
+    margin: 0 10px 0 10px;
+    text-align: center;
+    height: auto;
+    width: auto;
+    display: block;
+    border-bottom: 2px solid #292929;
+}
+.game__title {
+    color: #cacaca;
+    text-decoration: underline;
+}
+.game__catégorie {
+    color: #cacaca;
+}
+.game__desc {
+    width: auto;
+    word-wrap: break-word;
+    color: #cacaca;
+}
+.game__review {
+    margin: 0 10px 0 10px;
+    border-bottom: 2px solid #292929;
+}
+.author__review {
+    color: #cacaca;
+    text-transform: uppercase;
+}
+.button {
+    display: flex;
+    justify-content: space-around;
+}
+.note {
+    background-color: #f90;
+    margin: 20px 20px 20px 0;
+    padding: 15px 20px;
+    width: 290px;
+    border-radius: 5px;
+    color: #000;
+    cursor: pointer;
+    font-weight: 700;
+    text-align: center;
+}
+.note:hover {
+    background: #ffa31a;
+}
+.note a {
+    color: #000;
+    text-decoration: none;
+}

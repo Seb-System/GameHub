@@ -1,12 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         {% block stylesheets %}{% endblock %}
+        <link rel="stylesheet" href="..\..\..\assets\css\base.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <title>{% block title %}{% endblock %}</title>
     </head>
+    {% block navbar %}
+    <div class="sidebar__mobile">
+        <nav class="sidebar__nav">
+            <ul class="nav__list">
+                <li class="nav__item">
+                    <a class="profil" href="modifprofil.html"><i class="material-icons w3-text-orange">person</i></a>
+                    <p class="text">Solde</p>
+                    <p class="text">Julien</p>
+                </li>
+                <li class="nav__item">
+                    <a class="text">Catalogue</a>
+                </li>
+                <li class="nav__item">
+                    <a class="text" href="{{ path('app_register') }}">Inscription</a>
+                </li>
+                <li class="nav__item">
+                    <a class="text" href="{{ path('app_login') }}">Connexion</a>
+                </li>
+                <li class="nav__item">
+                    <a class="text" href="">Categorie name</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="overlay"></div>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    <header>
+        <div class="navbar__1">
+            <ul class="box">
+                <li class="navbar__content logo" href="http://127.0.0.1:8000/">
+                <a href="http://127.0.0.1:8000/">
+                    <span class="logo__span1">Game</span>
+                    <span class="logo__span2">Hub</span>
+                    </a>
+                </li>
+                <li class="navbar__content">
+                    <input class="search" type="text" id="searchTxt" placeholder="Rechercher parmis les 11,994,107 jeux" maxlength="100" name="search" autocomplete="off">
+                    <span class="search__button" onclick="searchURL();">
+                        <svg class="bi-search" width="1em" height="1em" viewBox="0 0 16 16" fill="Black" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 011.415 0l3.85 3.85a1 1 0 01-1.414 1.415l-3.85-3.85a1 1 0 010-1.415z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 100-11 5.5 5.5 0 000 11zM13 6.5a6.5 6.5 0 11-13 0 6.5 6.5 0 0113 0z" clip-rule="evenodd"/>
+                        </svg>
+                    </span>
+                </li>
+                {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                     <li>
+                        <a class="profil" href="{{ path('profil') }}"><i class="material-icons w3-text-orange">person</i></a>
+                    </li>
+                    <li class="solde">
+                        {{ balance }} €
+                    </li>
+                {% else %}
+                    <li class="navbar__content" >
+                         <a class="text" href="{{ path('app_register') }}">Inscription</a>
+                    </li>
+                    <li class="navbar__content" >
+                        <a class="text" href="{{ path('app_login') }}">Connexion</a>
+                    </li>
+                {% endif %}
+            </ul>
+            <div class="burger__wrapper">
+                <div class="burger__menu">
+                </div>
+            </div>
+        </div>
+    </header>
+    {% endblock %}
+
+    {% block body %}{% endblock %}
+</body>
+<script src="https://code.jquery.com/jquery-3.4.1.slim.js"
+integrity="sha256-BTlTdQO9/fascB1drekrDVkaKd9PkwBymMlHOiG+qLI=" crossorigin="anonymous"></script>
+<script src="../../assets/js/burger.js"></script>
+<script type="text/javascript">
+  function searchURL(){
+    window.location = "http://127.0.0.1:8000/search/" + document.getElementById("searchTxt").value;
+  }
+</script>
+{% block javascripts %}
+{% endblock %}
 </html>

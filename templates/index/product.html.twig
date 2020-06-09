@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="..\assets\css\product.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+
+    <div class="sidebar">
+        <ul class="sidebar__menu">
+            <li class="sidebar__content">
+               <a href="ajoutjeu.html" class="link">FPS</a>
+            </li>
+            <div class="border"></div>
+            <li class="sidebar__content">
+                <a class="link">Action</a>
+            </li>
+            <div class="border"></div>
+            <li class="sidebar__content">
+                <a class="link">Horreur</a>
+            </li>
+            <div class="border"></div>
+            <li class="sidebar__content">
+                <a class="link">Vente</a>
+            </li>
+            <div class="border"></div>
+        </ul>
+    </div>
+    <div class="container">
+        <div class="product">
+            <div class="img" style="background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url({{ game.gameimg }})">
+
+            </div>
+            <div class="product__content">
+                <h1 class="game__title">{{ game.gamename }}</h1>
+                <p class="game__catégorie">{{ game.gamecat.categoryname }}</p>
+                <p class="game__desc">{{ game.gamedesc }}</p>
+            </div>
+            <div class="game__review">
+                <h2 class="author__review">Auteur</h2>
+                <h4 class="author__review">22/01/01</h2>
+                <p class="game__desc">{{ game.gamedesc }}</p>
+            </div>
+            <div class="game__review">
+                <h2 class="author__review">Price</h2>
+                <h4 class="author__review">{{ game.gameprice }}</h2>
+                
+                <p class="game__desc">{{ game.gamedesc }}</p>
+            </div>
+            <div class="button">
+                <span class="note">
+                    <a href="">Noter ce jeu</a>
+                </span>
+                <span class="note">
+                    <a href="{{ path('paiement', {id:game.id})}}">Acheter pour {{ game.gameprice }}€</a>
+                </span>
+            </div>
+        </div>
+    </div>
+{% endblock %}

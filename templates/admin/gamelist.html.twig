@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Game List!{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="../../../assets/css/liste.css">
+{% endblock %}
+
+{% block body %}
+        <div class="sidebar">
+            <ul class="sidebar__menu">
+                <li class="sidebar__content">
+                   <a href="{{ path('add_game') }}" class="link">Ajouter Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_game') }}" class="link">Liste Jeu</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('list_user') }}" class="link">Liste Membre</a>
+                </li>
+                <div class="border"></div>
+                <li class="sidebar__content">
+                    <a href="{{ path('admin') }}" class="link">DashBoard</a>
+                </li>
+                <div class="border"></div>
+            </ul>
+        </div>
+        <div class="container">
+            <h1 class="item__name">Liste des Jeux</h1>
+            <div class="border"></div>
+            <div class="list">
+            {% for game in games %}
+                <div class="list__item">
+                    <p class="item__name">{{ game.gamename }}</p>
+                    <div class="icons">
+                        <a href="{{ path('del_game', {id: game.id }) }}"><i class="material-icons w3-text-orange">delete_outline</i></a>
+                        <a href="{{ path('edit_game', {id: game.id }) }}"><i class="material-icons w3-text-orange">create</i></a>
+                    </div>
+                </div>
+            {% endfor %}
+                <div class="border__list"></div>
+            </div>
+        </div>
+    </body>
+    {% endblock %}
